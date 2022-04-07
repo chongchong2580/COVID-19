@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ccit.dao.IncrementDao">
+    <resultMap id="IncrementMap" type="com.ccit.bean.Increment">
+        <id property="id" column="id"/>
+        <result property="province" column="province"/>
+        <result property="confirmedIncrement" column="confirmed_increment"/>
+        <result property="deathIncrement" column="death_increment"/>
+        <result property="cureIncrement" column="cure_increment"/>
+        <result property="existingConfirmedIncrement" column="existing_confirmed_increment"/>
+    </resultMap>
+    <select id="listTopIncrement" resultMap="IncrementMap">
+        select * from province_increment order by cast(confirmed_increment as UNSIGNED INTEGER) DESC limit 10
+    </select>
+
+    <select id="findAllByConfirmedIncrement">
+        select * from province_increment
+    </select>
+
+</mapper>

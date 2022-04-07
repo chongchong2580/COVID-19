@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <typeAlias alias="Increment" type="com.ccit.bean.Increment"/>
+        <typeAlias alias="Confirmed" type="com.ccit.bean.Confirmed"/>
+        <typeAlias alias="Jiangsu" type="com.ccit.bean.Jiangsu"/>
+        <typeAlias alias="Shanghai" type="com.ccit.bean.Shanghai"/>
+        <typeAlias alias="Guangdong" type="com.ccit.bean.Guangdong"/>
+        <typeAlias alias="Trend" type="com.ccit.bean.Trend"/>
+    </typeAliases>
+</configuration>

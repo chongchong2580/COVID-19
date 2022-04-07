@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccit.dao.ConfirmedDao">
+    <resultMap id="ConfirmedMap" type="com.ccit.bean.Confirmed">
+        <id property="id" column="id"/>
+        <result property="province" column="province"/>
+        <result property="confirmed" column="confirmed"/>
+        <result property="death" column="death"/>
+        <result property="cure" column="cure"/>
+        <result property="existingConfirmed" column="existing_confirmed"/>
+    </resultMap>
+
+    <select id="findAllByProvince" resultMap="ConfirmedMap">
+        select * from province_confirmed
+    </select>
+
+    <select id="findAll" resultMap="ConfirmedMap">
+        select * from province_confirmed order by cast(confirmed as UNSIGNED INTEGER) DESC limit 5
+    </select>
+</mapper>
